@@ -6,14 +6,14 @@ let initialState = {
       description: 'Good food = Good mood',
     },
     {
-      name: 'electronics',
-      display_name: 'Electronics',
-      description: 'Making your life easier, one volt at a time',
-    },
-    {
       name: 'clothing',
       display_name: 'Clothing',
       description: 'You are what you wear',
+    },
+    {
+      name: 'electronics',
+      display_name: 'Electronics',
+      description: 'Making your life easier, one volt at a time',
     },
   ],
   activeCategorie: {},
