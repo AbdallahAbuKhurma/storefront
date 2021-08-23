@@ -6,11 +6,11 @@ Our application will power an online storefront that will allow our users to bro
 
 ## Pull Requests
 
-[Redux]()
+[Redux](https://github.com/AbdallahAbuKhurma/storefront/pull/2)
 
 ## Deployment
 
-[Netlify URL]()
+[Netlify URL](https://store-froont.netlify.app/)
 
 ## UML
 
