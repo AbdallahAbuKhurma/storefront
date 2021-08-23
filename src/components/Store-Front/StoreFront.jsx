@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Store = (props) => {
+const StoreFront = (props) => {
   const classes = useStyles();
   let category = props.activeList.activeCategorie.display_name;
   let description =
@@ -52,4 +52,4 @@ const mapStateToProps = (state) => ({
   activeList: state.categories,
 });
 
-export default connect(mapStateToProps)(Store);
+export default connect(mapStateToProps)(StoreFront);

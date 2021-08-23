@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Status = (props) => {
+const Produts = (props) => {
   const classes = useStyles();
   return (
     <Container className={classes.cardGrid} maxWidth="md">
@@ -63,4 +63,4 @@ const Status = (props) => {
 
 const mapStateToProps = (state) => ({ products: state.products });
 const mapDispatchToProps = { increment };
-export default connect(mapStateToProps, mapDispatchToProps)(Status);
+export default connect(mapStateToProps, mapDispatchToProps)(Produts);

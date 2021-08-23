@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { active } from '../../store/actions/actions';
 import { Button, Grid } from '@material-ui/core';
 
-const activeCategories = (props) => {
+const Categories = (props) => {
   return (
     <div>
       <Grid container spacing={2} justifyContent="center">
@@ -30,4 +30,4 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = { active };
 
-export default connect(mapStateToProps, mapDispatchToProps)(activeCategories);
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);
