@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { Container, Typography, Grid, Card, CardMedia, CardContent, CardActions, Button, makeStyles} from '@material-ui/core/';
 import { increment } from '../../store/actions/actions';
+import { If, Then, Else } from 'react-if';
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -39,16 +40,35 @@ const Produts = (props) => {
                     {product.name}
                   </Typography>
                   <Typography>Price: ${product.price}</Typography>
+                  <Typography>
+                    {product.inStock > 0
+                      ? `In stock, ${product.inStock} items left`
+                      : 'Out of Stock'}
+                  </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button
-                    size="small"
-                    color="primary"
-                    onClick={() => props.increment()}
-                  >
-                    ADD TO CART
-                  </Button>
-                  <Button size="small" color="primary">
+                  <If condition = {product.inStock > 0}>
+                    <Then>
+                      <Button
+                        size="medium"
+                        color="primary"
+                        onClick={() => props.increment(product)}
+                      >
+                        ADD TO CART
+                      </Button>
+                    </Then>
+                    <Else>
+                      <Button
+                        disabled
+                        size="medium"
+                        color="primary"
+                        onClick={() => props.increment(product)}
+                      >
+                        ADD TO CART
+                      </Button>
+                    </Else>
+                  </If>
+                  <Button size="medium" color="primary">
                     VIEW DETAILS
                   </Button>
                 </CardActions>
