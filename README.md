@@ -8,10 +8,16 @@ Our application will power an online storefront that will allow our users to bro
 
 [Redux](https://github.com/AbdallahAbuKhurma/storefront/pull/2)
 
+[Combined-Reducers](https://github.com/AbdallahAbuKhurma/storefront/pull/4)
+
 ## Deployment
 
 [Netlify URL](https://store-froont.netlify.app/)
 
-## UML
+## Redux UML
 
 ![uml](./src/assets/StoreFront.jpg)
+
+## Combined-Reducers UML
+
+![uml1](./src/assets/StoreFront1.jpg)

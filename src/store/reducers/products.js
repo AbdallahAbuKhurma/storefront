@@ -7,6 +7,7 @@ let initialState = {
       category: 'electronics',
       price: 699.99,
       inStock: 3,
+      count: 0,
     },
     {
       _id: Math.random(),
@@ -15,6 +16,7 @@ let initialState = {
       category: 'electronics',
       price: 999.99,
       inStock: 10,
+      count: 0,
     },
     {
       _id: Math.random(),
@@ -23,6 +25,7 @@ let initialState = {
       category: 'electronics',
       price: 99.99,
       inStock: 15,
+      count: 0,
     },
 
     {
@@ -32,6 +35,7 @@ let initialState = {
       category: 'food',
       price: 3.99,
       inStock: 299,
+      count: 0,
     },
     {
       _id: Math.random(),
@@ -40,6 +44,7 @@ let initialState = {
       category: 'food',
       price: 2.99,
       inStock: 121,
+      count: 0,
     },
     {
       _id: Math.random(),
@@ -48,6 +53,7 @@ let initialState = {
       category: 'food',
       price: 2.49,
       inStock: 50,
+      count: 0,
     },
 
     {
@@ -57,6 +63,7 @@ let initialState = {
       category: 'clothing',
       price: 29.49,
       inStock: 19,
+      count: 0,
     },
     {
       _id: Math.random(),
@@ -65,23 +72,53 @@ let initialState = {
       category: 'clothing',
       price: 10.49,
       inStock: 34,
+      count: 0,
     },
   ],
-  count: 0,
 };
 
 const productsReducer = (state = initialState, action) => {
   const { type, payload } = action;
 
   switch (type) {
+
   case 'ACTIVE':
     let products = initialState.products.filter((product) =>
       product.category === payload ? product.category : null
     );
     return { products, count: state.count };
+
   case 'INCREMENT':
-    const count = state.count + 1;
-    return { products: state.products, count };
+    let productList = state.products.map((product) =>
+      payload.name === product.name
+        ? {
+          _id: product._id,
+          name: product.name,
+          url: product.url,
+          category: product.category,
+          price: product.price,
+          inStock: product.inStock - 1,
+          count: product.count + 1,
+        }
+        : product
+    );
+    return { products: productList };
+
+  case 'DECREMENT':
+    let newProducts = state.products.map((product) =>
+      payload.name === product.name
+        ? {
+          _id: product._id,
+          name: product.name,
+          url: product.url,
+          category: product.category,
+          price: product.price,
+          inStock: product.inStock + payload.count + 1,
+          count: product.count - payload.count - 1,
+        }
+        : product
+    );
+    return { products: newProducts };
   default:
     return state;
   }

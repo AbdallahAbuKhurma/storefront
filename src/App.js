@@ -3,6 +3,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import StoreFront from './components/Store-Front/StoreFront';
 
+
 function App() {
   return (
     <>
