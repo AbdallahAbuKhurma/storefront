@@ -10,6 +10,8 @@ Our application will power an online storefront that will allow our users to bro
 
 [Combined-Reducers](https://github.com/AbdallahAbuKhurma/storefront/pull/4)
 
+[Thunk](https://github.com/AbdallahAbuKhurma/storefront/pull/5)
+
 ## Deployment
 
 [Netlify URL](https://store-froont.netlify.app/)
@@ -21,3 +23,7 @@ Our application will power an online storefront that will allow our users to bro
 ## Combined-Reducers UML
 
 ![uml1](./src/assets/StoreFront1.jpg)
+
+## Thunk UML
+
+![uml1](./src/assets/StoreFront2.jpg)
