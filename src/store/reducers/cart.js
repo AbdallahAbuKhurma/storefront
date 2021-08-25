@@ -2,7 +2,6 @@ let initialState = {
   cart: [],
   count: 0,
   show: false,
-  display: [],
 };
 
 const cartReducer = (state = initialState, action) => {
