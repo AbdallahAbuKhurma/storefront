@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 const Produts = (props) => {
   useEffect(() => {
     props.getRemoteData();
+    // componentDidMount
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
